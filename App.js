@@ -9,6 +9,8 @@ import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import ResetPasswordScreen from './src/screens/ResetPasswordScreen';
 import UploadBankSlipScreen from './src/screens/UploadBankSlipScreen';
 import PlaceOrderRequestScreen from './src/screens/PlaceOrderRequestScreen';
+import BookNowScreen from './src/screens/BookNowScreen';
+import BookingsScreen from './src/screens/BookingsScreen';
 const theme = {
   ...DefaultTheme,
   colors: {
@@ -41,7 +43,9 @@ export default class App extends Component {
           {/* <ForgotPasswordScreen /> */}
           {/* <ResetPasswordScreen /> */}
           {/* <UploadBankSlipScreen /> */}
-          <PlaceOrderRequestScreen />
+          {/* <PlaceOrderRequestScreen /> */}
+          {/* <BookNowScreen /> */}
+          <BookingsScreen />
         </View>
       </PaperProvider>
     );

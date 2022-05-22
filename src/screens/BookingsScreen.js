@@ -9,7 +9,7 @@ import Textarea from 'react-native-textarea';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
-export class PlaceOrderRequestScreen extends Component {
+export class BookingsScreen extends Component {
     state = {
         Day: 1,
         numPrsn: 300,
@@ -48,26 +48,22 @@ export class PlaceOrderRequestScreen extends Component {
         ]
         const { Day, numPrsn, arrngmnt, evntType } = this.state
         return (
-            <SafeAreaView style={{ flex: 1, paddingHorizontal: 16 }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20 }}>
-                    <TouchableOpacity
-                        style={{ height: 40, width: 40, borderRadius: 20, backgroundColor: COLORS.primary, tintColor: '#fff', alignItems: 'center', justifyContent: 'center' }}>
+            <SafeAreaView style={{ flex: 1 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20, alignItems: 'center',paddingHorizontal:16 }}>
+                    <TouchableOpacity>
                         <Image source={require('../assets/images/back.png')}
-                            style={{ height: 20, width: 20, tintColor: '#fff' }}
+                            style={{ height: 18, width: 18 }}
                             resizeMode='contain'
                         />
                     </TouchableOpacity>
-                    <MaterialIcons
-                        name={'bookmark'}
-                        color={COLORS.primary}
-                        size={30}
-                        onPress={() => {
-
-                        }}
-                    />
+                    <Text style={{ color: COLORS.primary, fontSize: 20, fontFamily: FONTS.medium }}>
+                        Bookings
+                    </Text>
+                    <Text></Text>
                 </View>
-                <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}>
+                {/* <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}> */}
 
+                <View style={{ width: SCREEN_WIDTH * 0.94, height: SCREEN_HEIGHT * 0.8, elevation: 5, backgroundColor: '#fff', borderRadius: 5, alignSelf: 'center', padding: 10 ,justifyContent:'center'}}>
                     <View style={{ marginTop: 10 }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                             <Text style={{ color: '#000', fontSize: 18, fontFamily: FONTS.bold }}>PC Events</Text>
@@ -80,7 +76,7 @@ export class PlaceOrderRequestScreen extends Component {
                         <Text style={{ color: COLORS.txtColor, fontSize: 12, fontFamily: FONTS.medium }}>Marquee</Text>
                         <Text style={{ color: COLORS.txtColor, fontSize: 12, fontFamily: FONTS.medium }}>Near CCC, Rahim Yar Khan</Text>
                     </View>
-                    <View style={{ height: 35, width: 35, borderRadius: 20, backgroundColor: COLORS.primary, alignItems: 'center', justifyContent: 'center', alignSelf: 'flex-end',elevation:5 }}>
+                    <View style={{ height: 35, width: 35, borderRadius: 20, backgroundColor: COLORS.primary, alignItems: 'center', justifyContent: 'center', alignSelf: 'flex-end', elevation: 5 }}>
                         <FontAwesome5
                             name={'location-arrow'}
                             color={'#fff'}
@@ -230,21 +226,15 @@ export class PlaceOrderRequestScreen extends Component {
                     <View style={{ marginTop: 20 }}>
                         <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Arrangements</Text>
                     </View>
-                    <Textarea
-                        containerStyle={styles.textareaContainer}
-                        style={styles.textarea}
-                        placeholder='Describe here'
-                        // onChangeText={(txt) => { this.setState({ rule: txt }) }}
-                        // defaultValue={this.state.text}
-                        maxLength={120}
-                        underlineColorAndroid={'transparent'}
-                    />
-                </ScrollView>
-                <TouchableOpacity style={styles.btnLogin}>
-                    <Text style={{ color: '#fff', fontSize: 18, fontFamily: FONTS.bold }}>
-                        Place Order Request
-                    </Text>
-                </TouchableOpacity>
+                    <TouchableOpacity style={styles.btnLogin}>
+                        <Text style={{ color: '#fff', fontSize: 18, fontFamily: FONTS.bold }}>
+                            Save
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+
+                {/* </ScrollView> */}
+
             </SafeAreaView>
         )
     }
@@ -270,7 +260,7 @@ const styles = StyleSheet.create({
     },
     btnLogin: {
         height: SCREEN_HEIGHT * 0.07,
-        width: SCREEN_WIDTH * 0.9,
+        width: SCREEN_WIDTH * 0.4,
         backgroundColor: '#B65EE7',
         borderRadius: 50,
         alignItems: 'center',
@@ -279,4 +269,4 @@ const styles = StyleSheet.create({
         marginVertical: 10
     }
 });
-export default PlaceOrderRequestScreen
+export default BookingsScreen
