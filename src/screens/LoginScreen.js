@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        marginVertical:20
     }
 })
