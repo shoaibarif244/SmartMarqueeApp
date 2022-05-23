@@ -3,10 +3,13 @@ import {
     Text,
     View,
     Dimensions,
-    TouchableOpacity, Image, ImageBackground, StyleSheet
+    TouchableOpacity, Image, ImageBackground, StyleSheet, SafeAreaView, ScrollView
 } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import Carousel from 'react-native-looped-carousel';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+
+import { Rating, } from 'react-native-ratings';
 import { COLORS, FONTS } from '../CONSTANTS';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -26,7 +29,7 @@ export default class MarqueeDetailsScreen extends Component {
         const toDisabled = this.state.value == 3 ? true : false;
         const isBullets = this.state.value === 3 ? false : true;
         return (
-            <View>
+            <SafeAreaView style={{ flex: 1 }}>
                 <Carousel
                     style={{ height: SCREEN_HEIGHT * 0.40, width: SCREEN_WIDTH }}
                     delay={500}
@@ -36,49 +39,24 @@ export default class MarqueeDetailsScreen extends Component {
                     bulletStyle={{ backgroundColor: 'gray', borderColor: 'red', }}
                     chosenBulletStyle={{ backgroundColor: 'red', borderColor: 'gray' }} >
                     <View style={{ height: SCREEN_HEIGHT * 0.4, width: SCREEN_WIDTH, }}>
-                        {/* <View style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0., alignSelf: 'center' }}> */}
-                        {/* <Image source={require('../assets/images/bookNow.png')} resizeMode='stretch'
-                                style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.3, }}
-                            /> */}
                         <ImageBackground source={require('../assets/images/bookNow.png')}
                             style={StyleSheet.absoluteFillObject}
-                        // borderTopRightRadius={20}
-                        // borderTopLeftRadius={20}
-                        >
-                            <MaterialIcons
-                                name={'bookmark'}
-                                color={COLORS.primary}
-                                size={30}
-                                style={{ alignSelf: 'flex-end', marginVertical: 20, paddingHorizontal: 16 }}
-                                onPress={() => {
-                                    alert('Bookmarked')
-                                }}
-                            />
-
-
-                        </ImageBackground>
-                        {/* </View> */}
+                        />
                     </View>
-                    <View style={{ height: SCREEN_HEIGHT * 0.25, width: SCREEN_WIDTH, }}>
-                        <View style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.25, alignSelf: 'center' }}>
-                            <Image source={require('../assets/images/bookNow.png')} resizeMode='stretch'
-                                style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.25, }}
-                            />
-                        </View>
+                    <View style={{ height: SCREEN_HEIGHT * 0.4, width: SCREEN_WIDTH, }}>
+                        <ImageBackground source={require('../assets/images/bookNow.png')}
+                            style={StyleSheet.absoluteFillObject}
+                        />
                     </View>
-                    <View style={{ height: SCREEN_HEIGHT * 0.25, width: SCREEN_WIDTH, }}>
-                        <View style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.25, alignSelf: 'center' }}>
-                            <Image source={require('../assets/images/bookNow.png')} resizeMode='stretch'
-                                style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.25, }}
-                            />
-                        </View>
+                    <View style={{ height: SCREEN_HEIGHT * 0.4, width: SCREEN_WIDTH, }}>
+                        <ImageBackground source={require('../assets/images/bookNow.png')}
+                            style={StyleSheet.absoluteFillObject}
+                        />
                     </View>
-                    <View style={{ height: SCREEN_HEIGHT * 0.25, width: SCREEN_WIDTH, }}>
-                        <View style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.25, alignSelf: 'center' }}>
-                            <Image source={require('../assets/images/bookNow.png')} resizeMode='stretch'
-                                style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.25, }}
-                            />
-                        </View>
+                    <View style={{ height: SCREEN_HEIGHT * 0.4, width: SCREEN_WIDTH, }}>
+                        <ImageBackground source={require('../assets/images/bookNow.png')}
+                            style={StyleSheet.absoluteFillObject}
+                        />
                     </View>
 
                 </Carousel>
@@ -105,7 +83,76 @@ export default class MarqueeDetailsScreen extends Component {
                         $23,456
                     </Text>
                 </View>
-            </View>
+                <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}>
+                    <View style={{ flex: 1, marginTop: 50, paddingHorizontal: 16 }}>
+                        <View >
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <Text style={{ color: '#000', fontSize: 18, fontFamily: FONTS.bold }}>PC EVENTS</Text>
+                                <Rating
+                                    readonly
+                                    ratingBackgroundColor={'transparent'}
+                                    imageSize={20}
+                                />
+                            </View>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <View>
+                                    <Text style={{ color: COLORS.txtColor, fontSize: 12, fontFamily: FONTS.medium }}>Marquee</Text>
+                                    <Text style={{ color: COLORS.txtColor, fontSize: 12, fontFamily: FONTS.medium }}>Near CCC, Rahim Yar Khan</Text>
+                                </View>
+                                <View style={{ height: 35, width: 35, borderRadius: 20, backgroundColor: COLORS.primary, alignItems: 'center', justifyContent: 'center', alignSelf: 'flex-end', elevation: 5 }}>
+                                    <FontAwesome5
+                                        name={'location-arrow'}
+                                        color={'#fff'}
+                                        size={15}
+                                        onPress={() => {
+                                            alert('Location')
+                                        }}
+                                    />
+                                </View>
+                            </View>
+                        </View>
+                        <View style={{ marginTop: 30 }}>
+                            <Text style={{ color: '#000', fontSize: 16, fontFamily: FONTS.bold }}>Description</Text>
+                            <Text style={{ color: COLORS.txtColor, fontSize: 14, fontFamily: FONTS.regular }}>
+                                Short description for the info about the notification & Tui
+                                things Short description for the info about the notifipritw
+                                ation & things Short description for the info about thiqre
+                                e notification & things Short description for the infowure
+                                out the notification & things Short description for theqwi
+                                Short description for the info about the notification & Tui
+                            </Text>
+
+                        </View>
+                        <TouchableOpacity style={styles.btnLogin}>
+                            <Text style={{ color: '#fff', fontSize: 18, fontFamily: FONTS.medium }}>
+                                Check Availability
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.btnLogin, { backgroundColor: COLORS.pink }]}>
+                            <Text style={{ color: '#fff', fontSize: 18, fontFamily: FONTS.medium }}>
+                                Check Buffet
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.btnLogin}>
+                            <Text style={{ color: '#fff', fontSize: 18, fontFamily: FONTS.medium }}>
+                                Seating Plan
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    btnLogin: {
+        height: SCREEN_HEIGHT * 0.07,
+        width: SCREEN_WIDTH * 0.43,
+        backgroundColor: '#B65EE7',
+        borderRadius: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 10
+    }
+});
