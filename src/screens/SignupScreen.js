@@ -35,7 +35,7 @@ export default class SignupScreen extends Component {
                         right={<TextInput.Icon name="account-circle-outline" color={'#707070'} />}
                     />
                 </View>
-                <View>
+                <View style={{ marginTop: 10 }}>
                     <Text style={{ color: '#707070', fontFamily: FONTS.medium, fontSize: 18 }}>
                         Email
                     </Text>
@@ -54,7 +54,7 @@ export default class SignupScreen extends Component {
                         right={<TextInput.Icon name="email-outline" color={'#707070'} />}
                     />
                 </View>
-                <View style={{ marginVertical: 10 }}>
+                <View style={{ marginTop: 10 }}>
                     <Text style={{ color: '#707070', fontFamily: FONTS.medium, fontSize: 18 }}>
                         Password
                     </Text>
@@ -76,7 +76,7 @@ export default class SignupScreen extends Component {
                 </View>
                 <View style={{ marginVertical: 10 }}>
                     <Text style={{ color: '#707070', fontFamily: FONTS.medium, fontSize: 18 }}>
-                       Confirm Password
+                        Confirm Password
                     </Text>
                     <TextInput
                         label="Confirm Password"
@@ -103,7 +103,7 @@ export default class SignupScreen extends Component {
 
                 <TouchableOpacity style={styles.btnLogin}>
                     <Text style={{ color: '#fff', fontSize: 18, fontFamily: FONTS.bold }}>
-                        LOGIN
+                        SIGNUP
                     </Text>
                 </TouchableOpacity>
             </SafeAreaView>

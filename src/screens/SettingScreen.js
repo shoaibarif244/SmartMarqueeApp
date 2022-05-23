@@ -40,14 +40,16 @@ export default class SettingScreen extends Component {
                             return (
                                 <TouchableOpacity activeOpacity={0.8} key={item.key} style={{ flexDirection: 'row', width: SCREEN_WIDTH * 0.94, height: SCREEN_HEIGHT * 0.08, elevation: 5, backgroundColor: '#fff', borderRadius: 5, alignSelf: 'center', padding: 20, justifyContent: 'space-between', alignItems: 'center', marginTop: 10 }}>
                                     <Text style={{ color: '#000', fontSize: 16, fontFamily: FONTS.medium }}>{item.title}</Text>
-                                    {(index == 0 || index == 1) &&
+                                    {
+                                        (index == 0 || index == 1) &&
                                         <Switch
                                             trackColor={{ false: '#C2C0BE', true: COLORS.primary }}
                                             thumbColor={this.state.isEnabled ? '#fff' : COLORS.primary}
                                             ios_backgroundColor="#3e3e3e"
                                             onValueChange={this.toggleSwitch}
                                             value={this.state.isEnabled}
-                                        />}
+                                        />
+                                    }
                                 </TouchableOpacity>
                             )
                         })
