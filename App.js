@@ -56,59 +56,10 @@ export default class App extends Component {
           {/* <PrivacyPolicy /> */}
           {/* <SettingScreen /> */}
           {/* <SignupScreen /> */}
-          {/* <HomeScreen /> */}
-          <MarqueeDetailsScreen />
+          <HomeScreen />
+          {/* <MarqueeDetailsScreen /> */}
         </View>
       </PaperProvider>
     );
   }
 }
-
-
-// import { Text, View, SafeAreaView, StyleSheet, Image, ScrollView, ImageBackground, Dimensions, TouchableOpacity } from 'react-native'
-// import React, { Component } from 'react'
-// import SubHeader from '../reuseable/SubHeader'
-// const SCREEN_WIDTH = Dimensions.get('window').width;
-// const SCREEN_HEIGHT = Dimensions.get('window').height;
-// import { BG, backBtn, emaill, website, phone } from '../../assets/constant'
-// import { COLOR } from '../CONSTANTS/Colors';
-// import { fonts } from '../CONSTANTS/fonts';
-// export default class TermsConditionPolicy extends Component {
-
-//     render() {
-//         return (
-//             <SafeAreaView style={{ flex: 1, }}>
-//                 <ImageBackground
-//                     source={BG}
-//                     style={{ flex: 1, paddingHorizontal: 16 }}
-//                 >
-//                     <SubHeader navi={this.props.navigation} text='Terms & Condition Policy' />
-//                     <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}>
-//                         <View style={{ marginTop: 20 }}>
-//                             <Text style={styles.txtHeading}>
-//                                 Terms of Service Policy
-//                             </Text>
-//                             <Text style={styles.txtPara}>
-//                                 Nec quisque dui egestas magna laoreet pellentesque eleifend. Ultricies viverra eget donec curabitur feugiat pretium id sit. Cras sit imperdiet et ut at sit diam et. Egestas urna, amet, dictum fermentum neque posuere. Nec quisque dui egestas magna laoreet pellentesque eleifend. Ultricies viverra eget donec curabitur feugiat pretium id sit. Cras sit imperdiet et ut at sit diam et. Egestas urna, amet, dictum fermentum neque posuere.Nec quisque dui egestas magna laoreet pellentesque eleifend. Ultricies viverra eget donec curabitur feugiat pretium id sit. Cras sit imperdiet et ut at sit diam et. Egestas urna, amet, dictum fermentum neque posuere.
-//                             </Text>
-
-//                             <Text style={styles.txtPara}>
-//                                 Nec quisque dui egestas magna laoreet pellentesque eleifend. Ultricies viverra eget donec curabitur feugiat pretium id sit. Cras sit imperdiet et ut at sit diam et.
-//                             </Text>
-//                         </View>
-//                         <View style={{ marginBottom: 80 }} />
-
-//                     </ScrollView>
-//                 </ImageBackground>
-//             </SafeAreaView >
-//         )
-//     }
-// }
-
-
-// const styles = StyleSheet.create({
-//     txtPara: { color: '#666666', fontSize: 14, fontFamily: fonts.regular },
-//     txtHeading: { color: COLOR.secondary, fontSize: 14, fontFamily: fonts.medium, marginTop: 15, },
-
-// });
-
