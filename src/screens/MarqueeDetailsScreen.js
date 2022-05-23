@@ -28,19 +28,36 @@ export default class MarqueeDetailsScreen extends Component {
         return (
             <View>
                 <Carousel
-                    style={{ height: SCREEN_HEIGHT * 0.25, width: SCREEN_WIDTH }}
+                    style={{ height: SCREEN_HEIGHT * 0.40, width: SCREEN_WIDTH }}
                     delay={500}
                     isLooped={false}
                     autoplay={false}
                     bullets
-                    bulletStyle={{ backgroundColor: 'gray', borderColor: 'red' }}
-                    chosenBulletStyle={{ backgroundColor: 'red',borderColor:'gray' }} >
-                    <View style={{ height: SCREEN_HEIGHT * 0.25, width: SCREEN_WIDTH, }}>
-                        <View style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.25, alignSelf: 'center' }}>
-                            <Image source={require('../assets/images/bookNow.png')} resizeMode='stretch'
-                                style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.25, }}
+                    bulletStyle={{ backgroundColor: 'gray', borderColor: 'red', }}
+                    chosenBulletStyle={{ backgroundColor: 'red', borderColor: 'gray' }} >
+                    <View style={{ height: SCREEN_HEIGHT * 0.4, width: SCREEN_WIDTH, }}>
+                        {/* <View style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0., alignSelf: 'center' }}> */}
+                        {/* <Image source={require('../assets/images/bookNow.png')} resizeMode='stretch'
+                                style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.3, }}
+                            /> */}
+                        <ImageBackground source={require('../assets/images/bookNow.png')}
+                            style={StyleSheet.absoluteFillObject}
+                        // borderTopRightRadius={20}
+                        // borderTopLeftRadius={20}
+                        >
+                            <MaterialIcons
+                                name={'bookmark'}
+                                color={COLORS.primary}
+                                size={30}
+                                style={{ alignSelf: 'flex-end', marginVertical: 20, paddingHorizontal: 16 }}
+                                onPress={() => {
+                                    alert('Bookmarked')
+                                }}
                             />
-                        </View>
+
+
+                        </ImageBackground>
+                        {/* </View> */}
                     </View>
                     <View style={{ height: SCREEN_HEIGHT * 0.25, width: SCREEN_WIDTH, }}>
                         <View style={{ width: SCREEN_WIDTH, height: SCREEN_HEIGHT * 0.25, alignSelf: 'center' }}>
@@ -83,6 +100,11 @@ export default class MarqueeDetailsScreen extends Component {
                         resizeMode='contain'
                     />
                 </TouchableOpacity>
+                <View style={{ backgroundColor: '#fff', borderTopLeftRadius: 20, borderTopRightRadius: 20, height: 50, width: SCREEN_WIDTH * 0.3, position: 'absolute', top: SCREEN_HEIGHT * 0.38, alignSelf: 'center', elevation: 5, alignItems: 'center', justifyContent: 'center' }}>
+                    <Text style={{ color: COLORS.pink, fontSize: 22, fontFamily: FONTS.medium }}>
+                        $23,456
+                    </Text>
+                </View>
             </View>
         )
     }
