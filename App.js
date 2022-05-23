@@ -11,6 +11,9 @@ import UploadBankSlipScreen from './src/screens/UploadBankSlipScreen';
 import PlaceOrderRequestScreen from './src/screens/PlaceOrderRequestScreen';
 import BookNowScreen from './src/screens/BookNowScreen';
 import BookingsScreen from './src/screens/BookingsScreen';
+import BookingsScreen_1 from './src/screens/BookingsScreen_1';
+import PrivacyPolicy from './src/screens/PrivacyPolicy';
+import SettingScreen from './src/screens/SettingScreen';
 const theme = {
   ...DefaultTheme,
   colors: {
@@ -45,7 +48,10 @@ export default class App extends Component {
           {/* <UploadBankSlipScreen /> */}
           {/* <PlaceOrderRequestScreen /> */}
           {/* <BookNowScreen /> */}
-          <BookingsScreen />
+          {/* <BookingsScreen /> */}
+          <BookingsScreen_1 />
+          {/* <PrivacyPolicy /> */}
+          {/* <SettingScreen /> */}
         </View>
       </PaperProvider>
     );

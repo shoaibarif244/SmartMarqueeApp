@@ -49,7 +49,7 @@ export class BookingsScreen extends Component {
         const { Day, numPrsn, arrngmnt, evntType } = this.state
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20, alignItems: 'center',paddingHorizontal:16 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginVertical: 20, alignItems: 'center', paddingHorizontal: 16 }}>
                     <TouchableOpacity>
                         <Image source={require('../assets/images/back.png')}
                             style={{ height: 18, width: 18 }}
@@ -61,179 +61,181 @@ export class BookingsScreen extends Component {
                     </Text>
                     <Text></Text>
                 </View>
-                {/* <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}> */}
+                <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}>
 
-                <View style={{ width: SCREEN_WIDTH * 0.94, height: SCREEN_HEIGHT * 0.8, elevation: 5, backgroundColor: '#fff', borderRadius: 5, alignSelf: 'center', padding: 10 ,justifyContent:'center'}}>
-                    <View style={{ marginTop: 10 }}>
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                            <Text style={{ color: '#000', fontSize: 18, fontFamily: FONTS.bold }}>PC Events</Text>
-                            <Rating
-                                readonly
-                                ratingBackgroundColor={'transparent'}
-                                imageSize={20}
-                            />
+                    <View style={{ width: SCREEN_WIDTH * 0.94, height: SCREEN_HEIGHT * 0.8, elevation: 5, backgroundColor: '#fff', borderRadius: 5, alignSelf: 'center', padding: 10, justifyContent: 'space-evenly' }}>
+                        <View style={{ marginTop: 10 }}>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Image source={require('../assets/images/female.png')}
+                                        style={{ height: 45, width: 45, }}
+                                        resizeMode='contain'
+                                    />
+                                    <View style={{ marginLeft: 10 }}>
+                                        <Text style={{ color: '#000', fontSize: 18, fontFamily: FONTS.bold }}>PC Events</Text>
+                                        <Text style={{ color: COLORS.txtColor, fontSize: 12, fontFamily: FONTS.medium }}>Hi there, I need AC assistance.</Text>
+                                    </View>
+                                </View>
+                                <TouchableOpacity>
+                                    <Text style={{ color: COLORS.txtColor, fontSize: 14, fontFamily: FONTS.medium }}>Edit</Text>
+                                </TouchableOpacity>
+                            </View>
+
+
                         </View>
-                        <Text style={{ color: COLORS.txtColor, fontSize: 12, fontFamily: FONTS.medium }}>Marquee</Text>
-                        <Text style={{ color: COLORS.txtColor, fontSize: 12, fontFamily: FONTS.medium }}>Near CCC, Rahim Yar Khan</Text>
-                    </View>
-                    <View style={{ height: 35, width: 35, borderRadius: 20, backgroundColor: COLORS.primary, alignItems: 'center', justifyContent: 'center', alignSelf: 'flex-end', elevation: 5 }}>
-                        <FontAwesome5
-                            name={'location-arrow'}
-                            color={'#fff'}
-                            size={15}
-                            onPress={() => {
-                                alert('Location')
-                            }}
-                        />
-                    </View>
-                    <View style={{ marginTop: 20 }}>
-                        <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Select a Day</Text>
-                    </View>
-                    <View
-                        style={{
-                            flexDirection: 'row',
-                            marginTop: 10,
-                            justifyContent: 'space-evenly',
-                        }}>
-                        {Days.map((item, index) => {
-                            return (
-                                <TouchableOpacity
-                                    style={{
-                                        height: 30,
-                                        width: 50,
-                                        backgroundColor: Day == item.value ? COLORS.primary : 'transparent',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        borderRadius: 25,
-                                    }}
-                                    key={item.key}
-                                    value={item.value}
-                                    onPress={() => {
-                                        this.setState({ Day: item.value });
-                                    }}>
-                                    <Text
-                                        style={{
-                                            fontFamily: FONTS.medium,
-                                            fontSize: 18,
-                                            color:
-                                                Day == item.value
-                                                    ? '#fff'
-                                                    : COLORS.pink,
-                                        }}>
-                                        {item.name}
-                                    </Text>
-                                </TouchableOpacity>
-                            );
-                        })}
-                    </View>
-                    <View style={{ marginTop: 20 }}>
-                        <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Number of Person</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-evenly' }}>
-                        {NumPersons.map((item, index) => {
-                            return (
-                                <TouchableOpacity
-                                    style={{
-                                        height: 30,
-                                        width: 50,
-                                        backgroundColor: numPrsn == item.value ? COLORS.primary : 'transparent',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        borderRadius: 25,
-                                    }}
-                                    key={item.key}
-                                    value={item.value}
-                                    onPress={() => {
-                                        this.setState({ numPrsn: item.value });
-                                    }}>
-                                    <Text
-                                        style={{
-                                            fontFamily: FONTS.medium,
-                                            fontSize: 18,
-                                            color: numPrsn == item.value ? '#fff' : COLORS.pink,
-                                        }}>
-                                        {item.name}
-                                    </Text>
-                                </TouchableOpacity>
-                            );
-                        })}
-                    </View>
-                    <View style={{ marginTop: 20 }}>
-                        <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Event Type</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-evenly' }}>
-                        {EventType.map((item, index) => {
-                            return (
-                                <TouchableOpacity
-                                    style={{
-                                        height: 30,
-                                        width: 80,
-                                        backgroundColor: evntType == item.value ? COLORS.primary : 'transparent',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        borderRadius: 25,
-                                    }}
-                                    key={item.key}
-                                    value={item.value}
-                                    onPress={() => {
-                                        this.setState({ evntType: item.value });
-                                    }}>
-                                    <Text
-                                        style={{
-                                            fontFamily: FONTS.medium,
-                                            fontSize: 18,
-                                            color: evntType == item.value ? '#fff' : COLORS.pink,
-                                        }}>
-                                        {item.name}
-                                    </Text>
-                                </TouchableOpacity>
-                            );
-                        })}
-                    </View>
-                    <View style={{ marginTop: 20 }}>
-                        <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Arrangements</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-evenly' }}>
-                        {Arrangements.map((item, index) => {
-                            return (
-                                <TouchableOpacity
-                                    style={{
-                                        height: 30,
-                                        width: 110,
-                                        backgroundColor: arrngmnt == item.value ? COLORS.primary : 'transparent',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        borderRadius: 25,
-                                        // paddingHorizontal:5
-                                    }}
-                                    key={item.key}
-                                    value={item.value}
-                                    onPress={() => {
-                                        this.setState({ arrngmnt: item.value });
-                                    }}>
-                                    <Text
-                                        style={{
-                                            fontFamily: FONTS.medium,
-                                            fontSize: 16,
-                                            color: arrngmnt == item.value ? '#fff' : COLORS.pink,
-                                        }}>
-                                        {item.name}
-                                    </Text>
-                                </TouchableOpacity>
-                            );
-                        })}
-                    </View>
-                    <View style={{ marginTop: 20 }}>
-                        <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Arrangements</Text>
-                    </View>
-                    <TouchableOpacity style={styles.btnLogin}>
-                        <Text style={{ color: '#fff', fontSize: 18, fontFamily: FONTS.bold }}>
-                            Save
-                        </Text>
-                    </TouchableOpacity>
-                </View>
 
-                {/* </ScrollView> */}
+                        <View style={{ marginTop: 20 }}>
+                            <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Select a Day</Text>
+
+                            <View
+                                style={{
+                                    flexDirection: 'row',
+                                    marginTop: 10,
+                                    justifyContent: 'space-evenly',
+                                }}>
+                                {Days.map((item, index) => {
+                                    return (
+                                        <TouchableOpacity
+                                            style={{
+                                                height: 30,
+                                                width: 50,
+                                                backgroundColor: Day == item.value ? COLORS.primary : 'transparent',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                borderRadius: 25,
+                                            }}
+                                            key={item.key}
+                                            value={item.value}
+                                            onPress={() => {
+                                                this.setState({ Day: item.value });
+                                            }}>
+                                            <Text
+                                                style={{
+                                                    fontFamily: FONTS.medium,
+                                                    fontSize: 18,
+                                                    color:
+                                                        Day == item.value
+                                                            ? '#fff'
+                                                            : COLORS.pink,
+                                                }}>
+                                                {item.name}
+                                            </Text>
+                                        </TouchableOpacity>
+                                    );
+                                })}
+                            </View>
+                        </View>
+                        <View style={{ marginTop: 20 }}>
+                            <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Number of Person</Text>
+
+                            <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-evenly' }}>
+                                {NumPersons.map((item, index) => {
+                                    return (
+                                        <TouchableOpacity
+                                            style={{
+                                                height: 30,
+                                                width: 50,
+                                                backgroundColor: numPrsn == item.value ? COLORS.primary : 'transparent',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                borderRadius: 25,
+                                            }}
+                                            key={item.key}
+                                            value={item.value}
+                                            onPress={() => {
+                                                this.setState({ numPrsn: item.value });
+                                            }}>
+                                            <Text
+                                                style={{
+                                                    fontFamily: FONTS.medium,
+                                                    fontSize: 18,
+                                                    color: numPrsn == item.value ? '#fff' : COLORS.pink,
+                                                }}>
+                                                {item.name}
+                                            </Text>
+                                        </TouchableOpacity>
+                                    );
+                                })}
+                            </View>
+                        </View>
+                        <View style={{ marginTop: 20 }}>
+                            <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Event Type</Text>
+
+                            <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-evenly' }}>
+                                {EventType.map((item, index) => {
+                                    return (
+                                        <TouchableOpacity
+                                            style={{
+                                                height: 30,
+                                                width: 80,
+                                                backgroundColor: evntType == item.value ? COLORS.primary : 'transparent',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                borderRadius: 25,
+                                            }}
+                                            key={item.key}
+                                            value={item.value}
+                                            onPress={() => {
+                                                this.setState({ evntType: item.value });
+                                            }}>
+                                            <Text
+                                                style={{
+                                                    fontFamily: FONTS.medium,
+                                                    fontSize: 18,
+                                                    color: evntType == item.value ? '#fff' : COLORS.pink,
+                                                }}>
+                                                {item.name}
+                                            </Text>
+                                        </TouchableOpacity>
+                                    );
+                                })}
+                            </View>
+                        </View>
+                        <View style={{ marginTop: 20 }}>
+                            <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Arrangements</Text>
+
+                            <View style={{ flexDirection: 'row', marginTop: 10, justifyContent: 'space-evenly' }}>
+                                {Arrangements.map((item, index) => {
+                                    return (
+                                        <TouchableOpacity
+                                            style={{
+                                                height: 30,
+                                                width: 110,
+                                                backgroundColor: arrngmnt == item.value ? COLORS.primary : 'transparent',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                borderRadius: 25,
+                                                // paddingHorizontal:5
+                                            }}
+                                            key={item.key}
+                                            value={item.value}
+                                            onPress={() => {
+                                                this.setState({ arrngmnt: item.value });
+                                            }}>
+                                            <Text
+                                                style={{
+                                                    fontFamily: FONTS.medium,
+                                                    fontSize: 16,
+                                                    color: arrngmnt == item.value ? '#fff' : COLORS.pink,
+                                                }}>
+                                                {item.name}
+                                            </Text>
+                                        </TouchableOpacity>
+                                    );
+                                })}
+                            </View>
+                        </View>
+                        <View style={{ marginTop: 20 }}>
+                            <Text style={{ color: COLORS.txtColor, fontSize: 18, fontFamily: FONTS.medium }}>Arrangements</Text>
+
+                            <TouchableOpacity style={styles.btnLogin}>
+                                <Text style={{ color: '#fff', fontSize: 18, fontFamily: FONTS.bold }}>
+                                    Save
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </ScrollView>
 
             </SafeAreaView>
         )
