@@ -38,7 +38,7 @@ export default class SettingScreen extends Component {
                     {
                         SETTING.map((item, index) => {
                             return (
-                                <TouchableOpacity key={item.key} style={{ flexDirection: 'row', width: SCREEN_WIDTH * 0.94, height: SCREEN_HEIGHT * 0.08, elevation: 5, backgroundColor: '#fff', borderRadius: 5, alignSelf: 'center', padding: 20, justifyContent: 'space-between', alignItems: 'center', marginTop: 10 }}>
+                                <TouchableOpacity activeOpacity={0.8} key={item.key} style={{ flexDirection: 'row', width: SCREEN_WIDTH * 0.94, height: SCREEN_HEIGHT * 0.08, elevation: 5, backgroundColor: '#fff', borderRadius: 5, alignSelf: 'center', padding: 20, justifyContent: 'space-between', alignItems: 'center', marginTop: 10 }}>
                                     <Text style={{ color: '#000', fontSize: 16, fontFamily: FONTS.medium }}>{item.title}</Text>
                                     {(index == 0 || index == 1) &&
                                         <Switch

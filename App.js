@@ -49,9 +49,9 @@ export default class App extends Component {
           {/* <PlaceOrderRequestScreen /> */}
           {/* <BookNowScreen /> */}
           {/* <BookingsScreen /> */}
-          <BookingsScreen_1 />
+          {/* <BookingsScreen_1 /> */}
           {/* <PrivacyPolicy /> */}
-          {/* <SettingScreen /> */}
+          <SettingScreen />
         </View>
       </PaperProvider>
     );
