@@ -14,6 +14,7 @@ import BookingsScreen from './src/screens/BookingsScreen';
 import BookingsScreen_1 from './src/screens/BookingsScreen_1';
 import PrivacyPolicy from './src/screens/PrivacyPolicy';
 import SettingScreen from './src/screens/SettingScreen';
+import SignupScreen from './src/screens/SignupScreen';
 const theme = {
   ...DefaultTheme,
   colors: {
@@ -51,7 +52,8 @@ export default class App extends Component {
           {/* <BookingsScreen /> */}
           {/* <BookingsScreen_1 /> */}
           {/* <PrivacyPolicy /> */}
-          <SettingScreen />
+          {/* <SettingScreen /> */}
+          <SignupScreen />
         </View>
       </PaperProvider>
     );

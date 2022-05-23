@@ -51,7 +51,7 @@ export default class SignupScreen extends Component {
                             backgroundColor: 'transparent',
                             height: 50
                         }}
-                        right={<TextInput.Icon name="account-circle-outline" color={'#707070'} />}
+                        right={<TextInput.Icon name="email-outline" color={'#707070'} />}
                     />
                 </View>
                 <View style={{ marginVertical: 10 }}>
